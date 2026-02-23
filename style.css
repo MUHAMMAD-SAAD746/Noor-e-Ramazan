@@ -39,14 +39,14 @@ body {
         radial-gradient(circle at bottom left, #ECFDF5 0%, transparent 40%);
 }
 
-/* .pattern-overlay {
+.pattern-overlay {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(var(--primary-deep) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(var(--primary-deep) 1px, transparent 1.5px);
     background-size: 30px 30px;
     opacity: 0.1;
     pointer-events: none;
-} */
+}
 
 .floating-moon {
     position: absolute;
@@ -372,4 +372,9 @@ body {
     .current-city {
         font-size: 2.5rem;
     }
+}
+
+
+.error {
+    background: red !important;
 }

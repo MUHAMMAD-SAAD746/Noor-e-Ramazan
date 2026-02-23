@@ -1,3 +1,20 @@
+function toast(msg, className = "error", duration = 2000, destination = null) {
+    Toastify({
+        text: msg,
+        className: className,
+        duration: duration,
+        destination: destination,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        onClick: function () { } // Callback after click
+    }).showToast();
+}
+
+
+
 let currentTimeInMin;
 let namazTiming;
 
@@ -83,6 +100,10 @@ let timmer;
 
 
 const fetchTime = async () => {
+    if(!cityInput || cityInput.value.length == 0){
+        toast("Please enter City")
+        return;
+    }
 
     const sehriTime = document.getElementById("sehrTime")
     const iftarTime = document.getElementById("iftarTime")
@@ -92,12 +113,20 @@ const fetchTime = async () => {
     const asr = document.getElementById("asr")
     const maghrib = document.getElementById("maghrib")
     const isha = document.getElementById("isha")
-
+    let api;
     
 
     // const prayerCard = document.querySelectorAll(".prayer-card")
 
-    await fetch(`https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=1&school=${school.value}`)
+    console.log(typeof(school.value))
+    if(school.value === "13"){
+        api = `https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=13`
+    }
+    else{
+        api = `https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=1&school=${school.value}`
+    }
+    await fetch(api)
+    // await fetch(`https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=1&school=${school.value}`)
         .then(async (response) => {
             let data = await response.json();
             console.log(data);
@@ -138,7 +167,7 @@ dateInput.addEventListener("input", () => {
 
     timmer = setTimeout(() => {
         fetchTime()
-    }, 1500)
+    }, 500)
 })
 
 school.addEventListener("input", () => {
@@ -146,7 +175,7 @@ school.addEventListener("input", () => {
 
     timmer = setTimeout(() => {
         fetchTime()
-    }, 1500)
+    }, 500)
 })
 
 
