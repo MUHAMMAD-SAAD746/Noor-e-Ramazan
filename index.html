@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nur - Islamic Prayer Times</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Playfair Display for Elegance, Inter for Clarity -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="background-decor">
+        <div class="pattern-overlay"></div>
+        <img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/moon.svg" class="floating-moon" alt="Moon">
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="logo">Noor-e-Ramazan</h1>
+            <div class="search-bar">
+                <div class="input-group">
+                    <i class="ph ph-map-pin"></i>
+                    <input type="text" id="cityInput" placeholder="Enter City (e.g., Karachi)" value="">
+                </div>
+                <div class="input-group">
+                    <i class="ph ph-calendar"></i>
+                    <input type="date" id="dateInput">
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="current-date" id="displayDate">Saturday, February 21, 2026</p>
+                <!-- <h2 class="current-city" id="displayCity">Karachi, PK</h2> -->
+                <h2 class="current-city" id="displayCity"></h2>
+                <div class="clock-display" id="digitalClock">16:11</div>
+            </div>
+            
+            <div class="fasting-times">
+                <div class="fasting-card sehr">
+                    <div class="card-icon"><i class="ph ph-sun-dim"></i></div>
+                    <div class="card-info">
+                        <span class="label">Sehr Time</span>
+                        <span class="time" id="sehrTime">--/--</span>
+                    </div>
+                </div>
+                <div class="fasting-card iftar">
+                    <div class="card-icon"><i class="ph ph-moon-stars"></i></div>
+                    <div class="card-info">
+                        <span class="label">Iftar Time</span>
+                        <span class="time" id="iftarTime">--/--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prayer-times-grid">
+            <div class="prayer-card" id="fajr-container">
+                <span class="prayer-name">Fajr</span>
+                <span class="prayer-time" id="fajr">--/-- AM</span>
+                <!-- <div class="active-indicator">Current</div> -->
+            </div>
+            <div class="prayer-card" id="zohr-container">
+                <span class="prayer-name">Zohr</span>
+                <span class="prayer-time" id="zohr">--/-- PM</span>
+            </div>
+            <div class="prayer-card" id="asr-container">
+                <span class="prayer-name">Asr</span>
+                <span class="prayer-time" id="asr">--/-- PM</span>
+            </div>
+            <div class="prayer-card" id="maghrib-container">
+                <span class="prayer-name">Maghrib</span>
+                <span class="prayer-time" id="maghrib">--/-- PM</span>
+            </div>
+            <div class="prayer-card" id="isha-container">
+                <span class="prayer-name">Isha</span>
+                <span class="prayer-time" id="isha">--/-- PM</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Nur Prayer Times. Designed with spirituality.</p>
+        </footer>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
