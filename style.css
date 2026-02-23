@@ -372,6 +372,27 @@ body {
     .current-city {
         font-size: 2.5rem;
     }
+
+    /* Stack search inputs vertically */
+    .search-bar {
+        flex-direction: column;
+        gap: 0.8rem; /* Adjust spacing between inputs */
+        width: 100%;
+    }
+
+    .search-bar .input-group,
+    .search-bar .city-group {
+        width: 100%; /* Make inputs full width on mobile */
+        flex: none;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .clock-display {
+        font-size: 2.8rem;
+    }
 }
 
 
