@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const cityInput = document.getElementById("cityInput")
 const dateInput = document.getElementById("dateInput")
+const school = document.querySelector("#school-of-thought")
 let timmer;
 
 
@@ -96,7 +97,7 @@ const fetchTime = async () => {
 
     // const prayerCard = document.querySelectorAll(".prayer-card")
 
-    await fetch(`https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=1&school=1`)
+    await fetch(`https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=1&school=${school.value}`)
         .then(async (response) => {
             let data = await response.json();
             console.log(data);
@@ -133,6 +134,14 @@ cityInput.addEventListener("input", () => {
 })
 
 dateInput.addEventListener("input", () => {
+    clearTimeout(timmer)
+
+    timmer = setTimeout(() => {
+        fetchTime()
+    }, 1500)
+})
+
+school.addEventListener("input", () => {
     clearTimeout(timmer)
 
     timmer = setTimeout(() => {
