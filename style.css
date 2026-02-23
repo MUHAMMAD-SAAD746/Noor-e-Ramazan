@@ -314,6 +314,56 @@ body {
     align-self: center;
 }
 
+/* Solar Info Section */
+.solar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1.1s ease-out;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    gap: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card .card-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(217, 119, 6, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    flex-shrink: 0;
+}
+
+.info-card .card-icon i {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
 /* Footer */
 .footer {
     text-align: center;
@@ -356,6 +406,10 @@ body {
     .prayer-times-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .solar-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
@@ -395,8 +449,8 @@ body {
     .clock-display {
         font-size: 2.8rem;
     }
-    
-    .hero-content{
+
+    .hero-content {
         text-align: center;
     }
 

@@ -114,6 +114,9 @@ const fetchTime = async () => {
     const asr = document.getElementById("asr")
     const maghrib = document.getElementById("maghrib")
     const isha = document.getElementById("isha")
+
+    const sunriseTime = document.querySelector("#sunrise-time")
+    const sunsetTime = document.querySelector("#sunset-time")
     let api;
     
 
@@ -141,6 +144,10 @@ const fetchTime = async () => {
             maghrib.textContent = `${convertTo12Hour(data["data"]["timings"]["Maghrib"])}`
             isha.textContent = `${convertTo12Hour(data["data"]["timings"]["Isha"])}`
 
+            console.log(sunriseTime);
+            
+            sunriseTime.textContent = `${convertTo12Hour(data["data"]["timings"]["Sunrise"])}`
+            sunsetTime.textContent = `${convertTo12Hour(data["data"]["timings"]["Sunset"])}`
 
             namazTiming = data["data"]["timings"]
             setActiveClass(data["data"]["timings"])
