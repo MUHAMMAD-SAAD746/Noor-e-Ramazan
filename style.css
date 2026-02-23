@@ -370,19 +370,21 @@ body {
     }
 
     .current-city {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     /* Stack search inputs vertically */
     .search-bar {
         flex-direction: column;
-        gap: 0.8rem; /* Adjust spacing between inputs */
+        gap: 0.8rem;
+        /* Adjust spacing between inputs */
         width: 100%;
     }
 
     .search-bar .input-group,
     .search-bar .city-group {
-        width: 100%; /* Make inputs full width on mobile */
+        width: 100%;
+        /* Make inputs full width on mobile */
         flex: none;
     }
 
@@ -392,6 +394,18 @@ body {
 
     .clock-display {
         font-size: 2.8rem;
+    }
+    
+    .hero-content{
+        text-align: center;
+    }
+
+    .input-group input,
+    .input-group select {
+        flex: 1;
+        min-width: 0;
+        padding-left: 1rem;
+        padding-right: 0.1rem;
     }
 }
 

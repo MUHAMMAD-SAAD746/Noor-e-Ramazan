@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const now = new Date();
         const hrs = String(now.getHours()).padStart(2, '0');
         const mins = String(now.getMinutes()).padStart(2, '0');
-        document.getElementById('digitalClock').textContent = `${hrs}:${mins}`;
+        // document.getElementById('digitalClock').textContent = `(${hrs}:${mins})`;
+        document.getElementById('digitalClock').textContent = `${convertTo12Hour(`${hrs}:${mins}`)}`;
         currentTimeInMin = timeInMinutes(`${hrs}:${mins}`)
         if(namazTiming) setActiveClass(namazTiming);
     }
@@ -118,7 +119,6 @@ const fetchTime = async () => {
 
     // const prayerCard = document.querySelectorAll(".prayer-card")
 
-    console.log(typeof(school.value))
     if(school.value === "13"){
         api = `https://api.aladhan.com/v1/timingsByCity/${dateInput.value}?city=${cityInput.value}&country=Pakistan&method=13`
     }
